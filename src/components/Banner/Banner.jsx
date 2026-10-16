@@ -3,7 +3,7 @@ import mifoto from '../../assets/mifoto.jpg';
 
 const Banner = () => {
   return (
-    <section className="hero-section">
+    <section id="inicio" className="hero-section">
       <div className="hero-content">
 
         {/* 1. Etiqueta de Estado (Badge) */}
@@ -14,28 +14,27 @@ const Banner = () => {
 
         {/* 2. Foto de Perfil Circular */}
         <div className="profile-photo-container">
-          {/* Reemplazar src con {mifoto} cuando importen su imagen local */}
           <img 
             src={mifoto} 
-            alt="Foto de Perfil" 
+            alt="Retrato de Eliot Mayta Vergaray" 
             className="profile-photo" 
           />
         </div>
 
         {/* 3. Título Principal */}
         <h1 className="hero-title">
-          Giancarlos <br />
-          <span className="text-cyan">Barboza</span>
+          ELIOT MAYTA
+          <span className="hero-title-last">VERGARAY</span>
         </h1>
 
         {/* 4. Subtítulo (Rol) */}
         <h2 className="hero-subtitle">
-          Consultor e Instructor BI - Software | MOS Excel Expert | Power BI Data Analyst | Ingeniero de Sistemas
+          Estudiante de Ingeniería de Software en SENATI
         </h2>
 
         {/* 5. Descripción */}
         <p className="hero-description">
-          Construyo sistemas inteligentes que automatizan procesos, analizan datos y transforman la información. También desarrollo aplicaciones web funcionales para resolver necesidades reales. Consultoría de Software y BI para empresas.
+          Aprendo creando: diseño y desarrollo páginas web mientras sigo creciendo como futuro ingeniero de software.
         </p>
 
         {/* 6. Botones de Acción */}

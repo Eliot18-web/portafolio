@@ -1,163 +1,165 @@
-/* =========================================
-CONTENEDOR PRINCIPAL
-========================================= */
 .contacto-section {
-padding: 6rem 5%;
-background-color: #050810; /* Un fondo ligeramente más oscuro para
-cerrar la página */
-color: #ffffff;
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 5%;
+  background: var(--color-page);
+  color: var(--color-ink);
 }
+
 .contacto-main-title {
-color: #00d8ff;
-font-size: 2.5rem;
-font-weight: 700;
-margin-bottom: 4rem;
-text-align: center;
+  margin-bottom: 4rem;
+  color: var(--color-accent);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
 }
+
 .contacto-container {
-max-width: 1000px;
-width: 100%;
+  width: 100%;
+  max-width: 1120px;
 }
-/* =========================================
-GRID (2 Columnas)
-========================================= */
+
 .contacto-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
-align-items: start;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+  gap: 3rem;
 }
-/* =========================================
-COLUMNA IZQUIERDA (Info)
-========================================= */
+
 .info-title {
-font-size: 1.8rem;
-font-weight: 600;
-margin-bottom: 1rem;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
+
 .info-desc {
-color: #8b95a1;
-line-height: 1.6;
-margin-bottom: 2.5rem;
+  margin: 0 0 2rem;
+  color: var(--color-muted);
+  line-height: 1.7;
 }
+
 .info-items {
-display: flex;
-flex-direction: column;
-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
+
 .info-item {
-display: flex;
-align-items: center;
-gap: 1rem;
-}.info-icon {
-background-color: rgba(255, 255, 255, 0.03);
-border: 1px solid rgba(255, 255, 255, 0.1);
-color: #00d8ff;
-width: 45px;
-height: 45px;
-border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
 }
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d9dbd2;
+  border-radius: 6px;
+  color: var(--color-accent);
+}
+
 .item-label {
-display: block;
-font-size: 0.85rem;
-color: #8b95a1;
-margin-bottom: 0.2rem;
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--color-subtle);
+  font-size: 0.8rem;
 }
+
 .item-text {
-font-size: 1rem;
-font-weight: 500;
-color: #ffffff;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.92rem;
+  font-weight: 500;
 }
-/* =========================================
-COLUMNA DERECHA (Formulario)
-========================================= */
+
+.contact-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: var(--color-accent);
+}
+
 .contacto-form-wrapper {
-background-color: #111a2e;
-padding: 2.5rem;
-border-radius: 16px;
-border: 1px solid rgba(255, 255, 255, 0.05);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 7px;
+  background: #fff;
 }
+
 .contacto-form {
-display: flex;
-flex-direction: column;
-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
+
 .form-group {
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
 .form-group label {
-font-size: 0.9rem;
-color: #a0aab2;
+  color: var(--color-muted);
+  font-size: 0.85rem;
 }
-/* Estilos para los campos de entrada */
+
 .form-group input,
 .form-group textarea {
-width: 100%;
-background-color: rgba(0, 0, 0, 0.2);
-border: 1px solid rgba(255, 255, 255, 0.1);
-color: #ffffff;
-padding: 0.8rem 1rem;
-border-radius: 8px;
-font-size: 1rem;
-font-family: inherit;
-outline: none;
-transition: all 0.3s ease;
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #dfe1d9;
+  border-radius: 4px;
+  background: #fff;
+  color: #22251f;
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-/* Efecto FOCUS (Borde Cyan al hacer clic) */
+
 .form-group input:focus,
 .form-group textarea:focus {
-border-color: #00d8ff;
-box-shadow: 0 0 0 2px rgba(0, 216, 255, 0.2);
+  border-  color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(104, 116, 94, 0.12);
 }
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-color: #4b5563;
+  color: #a0a399;
 }
+
 .form-group textarea {
-resize: vertical;
+  resize: vertical;
 }
-/* =========================================
-BOTÓN ENVIAR
-========================================= */
+
 .btn-submit {
-background-color: #00d8ff;
-color: #050810;
-border: none;
-padding: 1rem;
-border-radius: 8px;
-font-size: 1rem;
-font-weight: 700;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.2s ease;
-margin-top: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.9rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--color-ink);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
+
 .btn-submit:hover {
-background-color: #00bce6;
-transform: translateY(-2px);
+  background: var(--color-accent);
 }
-/* =========================================
-RESPONSIVIDAD (Móviles)
-========================================= */
+
 @media (max-width: 768px) {
-.contacto-grid {
-grid-template-columns: 1fr;
-gap: 3rem;
-}
-.contacto-main-title {
-font-size: 2rem;
-margin-bottom: 2rem;
-}
-.contacto-form-wrapper {
-padding: 1.5rem;
-}
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contacto-form-wrapper {
+    padding: 1.25rem;
+  }
 }

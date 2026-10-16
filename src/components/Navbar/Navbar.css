@@ -1,94 +1,97 @@
-/* =======================================
-   ESTILOS GENERALES DEL NAVBAR
-   ======================================= */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background-color: #0b0f19; /* Fondo oscuro elegante */
-  color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 76px;
+  padding: 1rem max(5%, calc((100% - 1200px) / 2));
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(247, 247, 244, 0.94);
+  color: var(--color-ink);
+  backdrop-filter: blur(14px);
 }
 
-/* =======================================
-   ESTILOS DEL LOGO
-   ======================================= */
 .navbar-logo {
-  font-size: 1.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.08em;
 }
 
-.text-cyan {
-  color: #00d8ff; /* Color de acento (Cyan) */
+.navbar-logo a {
+  color: var(--color-ink);
+  text-decoration: none;
 }
 
-/* =======================================
-   ESTILOS DE LOS ENLACES (DESKTOP)
-   ======================================= */
 .navbar-links {
   display: flex;
-  gap: 2.5rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 .navbar-links a {
-  color: #a0aab2;
+  color: var(--color-muted);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-.navbar-links a:hover {
-  color: #ffffff;
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  color: var(--color-accent);
 }
 
-/* =======================================
-   BOTÓN HAMBURGUESA (Oculto en PC)
-   ======================================= */
 .navbar-toggle {
   display: none;
   flex-direction: column;
-  cursor: pointer;
+  justify-content: center;
   gap: 6px;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  width: 23px;
+  height: 2px;
+  background: var(--color-ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* =======================================
-   MEDIA QUERY: VERSIÓN MÓVIL Y TABLET
-   ======================================= */
+.navbar-toggle.active .bar:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .bar:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
   .navbar-toggle {
-    display: flex; /* Mostramos el botón hamburguesa */
+    display: flex;
   }
 
   .navbar-links {
-    display: none; /* Ocultamos los enlaces horizontales */
-    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 1.4rem;
     width: 100%;
-    background-color: #0b0f19;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-page);
     text-align: center;
-    gap: 2rem;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* Cuando el estado isOpen es true, se añade la clase "open" */
   .navbar-links.open {
     display: flex;
   }

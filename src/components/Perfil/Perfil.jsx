@@ -10,7 +10,7 @@ const Perfil = () => {
           {/* ======================================
               TARJETA 1: PERFIL PROFESIONAL
               ====================================== */}
-          <div className="card">
+          <div id="servicios" className="card">
             <div className="card-header">
               {/* Ícono de Usuario (SVG) */}
               <div className="icon-box">
@@ -19,15 +19,11 @@ const Perfil = () => {
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
               </div>
-              <h3>Perfil profesional</h3>
+              <h3>Estudiante</h3>
             </div>
 
             <p className="card-text">
-              Ingeniero de Sistemas Computacionales, con experiencia en la docencia de más de 15 años, dictando clases de forma presencial y virtual en diferentes instituciones educativas de prestigio y con experiencia profesional de más de 11 años.
-              <br /><br />
-              Cuento la Certificación Internacional en Microsoft Office Specialist (MOS) Excel Expert y PL - 300 Data Analyst Associate. Instructor CISCO y ORACLE.
-              <br />
-              Consultoría y experiencia en desarrollo de software, utilizando tecnologías como React, Laravel, NodeJS, ExpressJS, MySQL, PostgreSQL, etc. y en desarrollo de dashboards interactivos mediante Power BI, DAX, Power Query, modelado de datos en SQL y automatizaciones con Python.
+              Soy estudiante de Ingeniería de Software con IA en SENATI. Estoy desarrollando mis habilidades creando páginas web y aprendiendo a convertir ideas en experiencias digitales útiles.
             </p>
           </div>
 
@@ -47,40 +43,12 @@ const Perfil = () => {
             </div>
 
             <div className="timeline">
-              {/* Ítem de Educación 1 */}
               <div className="timeline-item">
                 <div className="timeline-header">
-                  <h4>Ingeniería de Sistemas Computacionales</h4>
-                  <span className="badge badge-outline">Titulado</span>
+                  <h4>Ingeniería de Software con IA</h4>
+                  <span className="badge badge-outline">En curso</span>
                 </div>
-                <span className="timeline-date">UNIVERSIDAD TECNOLÓGICA DEL PERÚ</span>
-              </div>
-
-              {/* Ítem de Educación 2 */}
-              <div className="timeline-item">
-                <div className="timeline-header">
-                  <h4>Computación e Informática</h4>
-                  <span className="badge badge-outline">Titulado</span>
-                </div>
-                <span className="timeline-date">I.S.T CESCA</span>
-              </div>
-
-              {/* Ítem de Educación 3 */}
-              <div className="timeline-item">
-                <div className="timeline-header">
-                  <h4>MOS Excel Expert</h4>
-                  <span className="badge badge-outline">Certificación Internacional</span>
-                </div>
-                <span className="timeline-date">MICROSOFT</span>
-              </div>
-
-              {/* Ítem de Educación 4 */}
-              <div className="timeline-item">
-                <div className="timeline-header">
-                  <h4>Power BI Data Analyst Associate - PL - 300</h4>
-                  <span className="badge badge-outline">Certificación Internacional</span>
-                </div>
-                <span className="timeline-date">MICROSOFT</span>
+                <span className="timeline-date">INSTITUTO SENATI</span>
               </div>
             </div>
           </div>

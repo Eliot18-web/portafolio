@@ -9,11 +9,11 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Sección del Logo */}
       <div className="navbar-logo">
-        <span className="text-cyan">Giancarlos</span> Barboza
+        <a href="#inicio" aria-label="Ir al inicio">ELIOT MAYTA VERGARAY</a>
       </div>
 
       {/* Enlaces de Navegación */}
-      <div className={`navbar-links ${isOpen ? "open" : ""}`}>
+      <div id="navbar-navigation" className={`navbar-links ${isOpen ? "open" : ""}`}>
         {/* Al hacer clic en un enlace en móvil, cerramos el menú */}
         <a href="#sobre-mi" onClick={() => setIsOpen(false)}>Perfil</a>
         <a href="#tech-stack" onClick={() => setIsOpen(false)}>Tech Stack</a>
@@ -23,11 +23,18 @@ const Navbar = () => {
       </div>
 
       {/* Ícono de Menú Hamburguesa (Solo visible en móviles) */}
-      <div className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        type="button"
+        className={`navbar-toggle ${isOpen ? "active" : ""}`}
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-controls="navbar-navigation"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
-      </div>
+      </button>
     </nav>
   );
 };

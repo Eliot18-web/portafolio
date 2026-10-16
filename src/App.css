@@ -1,0 +1,25 @@
+.app {
+  overflow-x: clip;
+}
+
+main {
+  display: block;
+}
+
+.section-title {
+  margin: 0 0 2.5rem;
+  color: var(--color-ink);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+section[id],
+#servicios {
+  scroll-margin-top: 5rem;
+}
