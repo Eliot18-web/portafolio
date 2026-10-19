@@ -47,7 +47,7 @@
   gap: 0.75rem;
   height: 240px;
   border-bottom: 1px solid var(--color-border);
-  background: #f7f7f4;
+  background: var(--color-surface-raised);
   color: var(--color-muted);
 }
 
@@ -99,7 +99,7 @@
   padding: 0.35rem 0.55rem;
   border: 1px solid var(--color-border);
   border-radius: 3px;
-  background: #f7f7f4;
+  background: var(--color-surface-raised);
   color: var(--color-muted);
   font-size: 0.75rem;
   font-weight: 500;
@@ -116,9 +116,9 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.65rem 0.85rem;
-  border: 1px solid #d9dbd2;
+  border: 1px solid var(--color-border-strong);
   border-radius: 4px;
-  color: #22251f;
+  color: var(--color-ink);
   font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;

@@ -1,141 +1,70 @@
 import './Habilidades.css'
 
 const Habilidades  = () => {
-  // Arreglo de datos: Simulamos la información que podría venir de una API[cite: 14]
   const skillsData = [
+    { nombre: "HTML", logo: "https://cdn.simpleicons.org/html5/E34F26" },
+    { nombre: "CSS", logo: "https://img.icons8.com/?size=100&id=21278&format=png&color=000000" },
+    { nombre: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+    { nombre: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+    { nombre: "GitHub", logo: "https://cdn.simpleicons.org/github/FFFFFF" },
+  ];
+  const certificatesData = [
     {
       id: 1,
-      titulo: "Power BI",
-      descripcion: "DAX, Data Modeling, Power Query, Governance.",
-      nivel: "Avanzado",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado" // Usaremos esto pra cambiar los colores[cite: 14]
+      simbolo: "J",
+      titulo: "Java Fundamentals",
+      descripcion: "Fundamentos del lenguaje, sintaxis, variables y estructuras de control.",
     },
     {
       id: 2,
-      titulo: "SQL Server / MySQL / PostgreSql / Oracle",
-      descripcion: "SQL, T-SQL, Optimización, Procedimientos Almacenados.",
-      nivel: "Avanzado",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
+      simbolo: "J+",
+      titulo: "Java Foundations",
+      descripcion: "Programación orientada a objetos y construcción de aplicaciones Java.",
     },
     {
       id: 3,
-      titulo: "Python for Data Analyst",
-      descripcion: "Pandas, NumPy, Matplotlib, Automatización, Keras.",
-      nivel: "Avanzado",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
+      simbolo: "SQL",
+      titulo: "Database Programming with SQL",
+      descripcion: "Consultas, filtros y manipulación de datos relacionales con SQL.",
     },
     {
       id: 4,
-      titulo: "Excel / VBA",
-      descripcion: "Macros, Power Pivot, Power Query, Pivot Tables, Dashboards complejos.",
-      nivel: "Experto",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
+      simbolo: "DB",
+      titulo: "Database Design",
+      descripcion: "Modelado de datos y diseño de estructuras para bases relacionales.",
     },
-    {
-      id: 5,
-      titulo: "Laravel",
-      descripcion: "Backend Developer",
-      nivel: "Avanzado",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 6,
-      titulo: "React",
-      descripcion: "Construcción de Interfaces de Usuario Modernas a partir de Componentes",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 7,
-      titulo: "Angular",
-      descripcion: "Construcción de aplicaciones web de una sola página.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 8,
-      titulo: "Git",
-      descripcion: "Sistema de Control de Versiones.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 9,
-      titulo: "GitHub",
-      descripcion: "Repositorio en la nube.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 10,
-      titulo: "JavaScript",
-      descripcion: "Lenguaje de programación interpretado, dialecto del estándar ECMAScript.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 11,
-      titulo: "Grid",
-      descripcion: "Construcción de rejillas responsivas.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    },
-    {
-      id: 12,
-      titulo: "Flexbox",
-      descripcion: "Método de diseño de página unidimensional para compaginar elementos en filas o columnas.",
-      nivel: "Aprendizaje Activo",
-      botonTexto: "VER CERTIFICADO",
-      estado: "completado"
-    }
   ];
 
   return (
     <section id="tech-stack" className="habilidades-section">
       <div className="habilidades-container">
-        <h2 className="section-title">Tecnologías y habilidades</h2>
-        {/* Iteramos sobre el arreglo de datos usando .map() */}
+        <div className="habilidades-heading">
+          <span className="habilidades-kicker">STACK / 01</span>
+          <h2 className="section-title">Tecnologías y habilidades</h2>
+          <p className="habilidades-intro">Lenguajes y herramientas que utilizo para crear y compartir proyectos.</p>
+        </div>
         <div className="habilidades-grid">
           {skillsData.map((skill) => (
-            <div key={skill.id} className="skill-card">
-
-              {/* Cabecera de la tarjeta: Ícono y Botón */}
-              <div className="skill-header">
-                <div className="skill-icon">
-                  {/* Aquí pueden colocar la etiqueta <img src={LogoPowerBI} /> */}
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                    <line x1="9" y1="21" x2="9" y2="9"></line>
-                  </svg>
-                </div>
-
-                {/* Clases dinámicas: Si el estado es proceso, aplicamos la clase 'btn-proceso' */}
-                <span className={`skill-badge ${skill.estado === 'proceso' ? 'badge-yellow' : 'badge-green'}`}>
-                  {skill.botonTexto}
-                </span>
-              </div>
-
-              {/* Cuerpo de la tarjeta: Textos */}
-              <div className="skill-body">
-                <h3 className="skill-title">{skill.titulo}</h3>
-                <p className="skill-desc">{skill.descripcion}</p>
-                <span className="skill-level">{skill.nivel}</span>
-              </div>
-
-            </div>
+            <article key={skill.nombre} className="skill-card">
+              <img className={`skill-logo${skill.nombre === 'CSS' ? ' skill-logo-css' : ''}`} src={skill.logo} alt="" loading="lazy" />
+              <h3 className="skill-title">{skill.nombre}</h3>
+            </article>
           ))}
+        </div>
+        <div className="certificados-section">
+          <h3 className="certificados-title">Certificados</h3>
+          <div className="certificados-grid">
+            {certificatesData.map((certificate) => (
+              <article key={certificate.id} className="certificate-card">
+                <div className="certificate-header">
+                  <div className="certificate-icon" aria-hidden="true">{certificate.simbolo}</div>
+                  <span className="certificate-badge">VER CERTIFICADO</span>
+                </div>
+                <h4 className="certificate-name">{certificate.titulo}</h4>
+                <p className="certificate-description">{certificate.descripcion}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
