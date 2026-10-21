@@ -11,6 +11,16 @@ Currently, two official plugins are available:
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Project configuration and development
+
+The contact form sends messages through EmailJS. Add these variables to `.env` in the project root:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+In the EmailJS dashboard, set the template's **To Email** to the inbox where you want to receive messages. The form sends `nombre`, `email`, and `mensaje`, as well as the common aliases `from_name`, `from_email`, `reply_to`, and `message` for template fields. Set the template's Reply-To to `{{reply_to}}` if you want to reply directly to the sender. Restart the Vite development server after changing `.env`.
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

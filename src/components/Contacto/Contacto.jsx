@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 import './Contacto.css';
 
 const Contacto = () => {
@@ -8,22 +10,76 @@ const Contacto = () => {
     email: '',
     mensaje: ''
   });
+  const [enviando, setEnviando] = useState(false);
 
-  // Función para manejar los cambios en los inputs
   const manejarCambio = (e) => {
     const { name, value } = e.target;
-    setFormulario({
-      ...formulario,
+    setFormulario((estadoActual) => ({
+      ...estadoActual,
       [name]: value
-    });
+    }));
   };
 
-  // Función para simular el envío
-  const manejarEnvio = (e) => {
+  const manejarEnvio = async (e) => {
     e.preventDefault();
-    alert(`¡Gracias por tu mensaje, ${formulario.nombre}! Te contactaré pronto.`);
-    // Limpiamos el formulario después de enviar
-    setFormulario({ nombre: '', email: '', mensaje: '' });
+
+    const { VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY } = import.meta.env;
+
+    if (!VITE_EMAILJS_SERVICE_ID || !VITE_EMAILJS_TEMPLATE_ID || !VITE_EMAILJS_PUBLIC_KEY) {
+      await Swal.fire({
+        title: 'Configuración pendiente',
+        text: 'Configura las variables de EmailJS para poder enviar el mensaje.',
+        icon: 'error'
+      });
+      return;
+    }
+
+    setEnviando(true);
+    Swal.fire({
+      title: 'Enviando mensaje...',
+      text: 'Por favor, espera un momento.',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => Swal.showLoading()
+    });
+
+    try {
+      const parametrosPlantilla = {
+        ...formulario,
+        from_name: formulario.nombre,
+        from_email: formulario.email,
+        reply_to: formulario.email,
+        message: formulario.mensaje
+      };
+
+      await emailjs.send(
+        VITE_EMAILJS_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID,
+        parametrosPlantilla,
+        VITE_EMAILJS_PUBLIC_KEY
+      );
+      setFormulario({ nombre: '', email: '', mensaje: '' });
+      await Swal.fire({
+        title: 'Drag me!',
+        icon: 'success',
+        draggable: true
+      });
+    } catch (error) {
+      const mensajeError = error instanceof Error
+        ? error.message
+        : error && typeof error === 'object' && 'text' in error && typeof error.text === 'string'
+          ? error.text
+          : 'Inténtalo de nuevo más tarde.';
+
+      await Swal.fire({
+        title: 'No se pudo enviar',
+        text: mensajeError,
+        icon: 'error',
+        confirmButtonText: 'Entendido'
+      });
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
@@ -131,7 +187,9 @@ const Contacto = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-submit">Enviar Mensaje</button>
+              <button type="submit" className="btn-submit" disabled={enviando}>
+                {enviando ? 'Enviando...' : 'Enviar Mensaje'}
+              </button>
 
             </form>
           </div>
