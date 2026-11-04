@@ -12,7 +12,9 @@ const Habilidades  = () => {
     { nombre: "HTML", logo: "https://cdn.simpleicons.org/html5/E34F26" },
     { nombre: "CSS", logo: "https://img.icons8.com/?size=100&id=21278&format=png&color=000000" },
     { nombre: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+    { nombre: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
     { nombre: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+    { nombre: "Git", logo: "https://cdn.simpleicons.org/git/F05032" },
     { nombre: "GitHub", logo: "https://cdn.simpleicons.org/github/FFFFFF" },
   ];
   const certificatesData = [

@@ -3,11 +3,32 @@ import ecolimImage from '../../assets/Ecolim.png';
 import tareasImage from '../../assets/Tareas.png';
 import tinkercadImage from '../../assets/Tinkercad1.png';
 import tinkercadImage2 from '../../assets/Tinkercad2.png';
+import inventarioImage from '../../assets/appInventario.png';
+import novaSaludImage from '../../assets/Novasalud.png';
 
 const Proyectos = () => {
   const proyectosData = [
     {
       id: 1,
+      imagen: novaSaludImage,
+      titulo: "NovaSalud - Sistema de inventario para botica",
+      descripcion: "Proyecto escolar grupal: sistema para gestionar el inventario de una botica.",
+      tecnologias: ["Sistema de inventario", "Botica", "Proyecto escolar grupal"],
+      linkCodigo: "https://github.com/DanielaMendoza4/novaSalud",
+      linkDemo: "https://nova-salud-smoky.vercel.app/login",
+      linkDemoTexto: "Ver sitio web"
+    },
+    {
+      id: 2,
+      imagen: inventarioImage,
+      titulo: "Sistema web de gestión de inventario",
+      descripcion: "Aplicación web para gestionar el inventario, acompañada de una API/backend disponible en un repositorio independiente.",
+      tecnologias: ["Aplicación web", "Gestión de inventario", "API / Backend"],
+      linkCodigo: "https://github.com/Eliot18-web/appInventario",
+      linkApi: "https://github.com/Eliot18-web/miApi"
+    },
+    {
+      id: 3,
       imagen: ecolimImage,
       titulo: "Ecolim",
       descripcion: "Proyecto académico desarrollado en equipo con Java y Android Studio. Permite registrar productos y clasificarlos según el tipo de residuo; la información se almacena en SQLite y se gestiona con DB Browser for SQLite.",
@@ -15,7 +36,7 @@ const Proyectos = () => {
       linkCodigo: "https://github.com/DanielaMendoza4/appEcolim"
     },
     {
-      id: 2,
+      id: 4,
       imagen: tareasImage,
       titulo: "App de gestión de tareas",
       descripcion: "Proyecto académico desarrollado en equipo con Java y Android Studio para organizar tareas y dar seguimiento a las actividades pendientes. La información se almacena en SQLite y se gestiona con DB Browser for SQLite.",
@@ -23,7 +44,7 @@ const Proyectos = () => {
       linkCodigo: "https://github.com/DanielaMendoza4/appTareas"
     },
     {
-      id: 3,
+      id: 5,
       imagen: tinkercadImage,
       titulo: "Sistema de Invernadero Inteligente y Gestión de Energía Solar (Smart Greenhouse & Power Optimizer)",
       descripcion: "Proyecto grupal diseñado en Tinkercad que combina la automatización de un invernadero inteligente con la gestión de energía solar, buscando optimizar el uso de los recursos y mantener condiciones adecuadas para el cultivo.",
@@ -32,7 +53,7 @@ const Proyectos = () => {
       linkTexto: "Vista Tinkercad"
     },
     {
-      id: 4,
+      id: 6,
       imagen: tinkercadImage2,
       titulo: "Sistema de Monitoreo y Alerta para Áreas Críticas",
       descripcion: "Prototipo grupal diseñado y simulado en Tinkercad para proteger el área de estantes de EMPRESARIOTEC S.A. Un sensor ultrasónico HC-SR04 monitorea la distancia y un Arduino Uno permite generar alertas ante la aproximación de personas u objetos no autorizados.",
@@ -92,6 +113,22 @@ const Proyectos = () => {
                     )}
                     {proyecto.linkTexto || "Ver repositorio"}
                   </a>
+                  {proyecto.linkDemo && (
+                    <a href={proyecto.linkDemo} target="_blank" rel="noopener noreferrer" className="btn-proyecto btn-codigo">
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 3h7v7M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      </svg>
+                      {proyecto.linkDemoTexto || "Ver sitio web"}
+                    </a>
+                  )}
+                  {proyecto.linkApi && (
+                    <a href={proyecto.linkApi} target="_blank" rel="noopener noreferrer" className="btn-proyecto btn-codigo">
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                      Ver API / Backend
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
